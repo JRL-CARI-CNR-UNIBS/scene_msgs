@@ -33,6 +33,9 @@ so a client can tell whether what it read is still current.
 | `SetProperties` / `RemoveProperties` | User properties (`located: blue box`) |
 | `AddRelation` / `RemoveRelation` / `SetRelationState` | Mechanical relations |
 | `Acquire` | Run one acquisition (served by `scene_updater`) |
+| `CaptureView` | Store a view (frame + camera pose) for `AcquireGrasps` (served by `scene_updater`) |
+| `AcquireGrasps` | Grasps of one object from the stored views, in a volume around its box (served by `scene_updater`) |
+| `SetGrasps` | Replace the grasps of one object without changing its pose |
 
 Field semantics are documented in the comments of the `.msg`/`.srv` files and
 in [`scene_db/docs/API.md`](../scene_db/docs/API.md).
