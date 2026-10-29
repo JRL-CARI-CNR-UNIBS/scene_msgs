@@ -1,0 +1,5 @@
+uint64 relation_id
+---
+bool success
+string message
+uint64 scene_version

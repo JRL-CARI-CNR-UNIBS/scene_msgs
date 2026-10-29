@@ -1,0 +1,8 @@
+# Add or update a relation between existing objects (e.g. a priori knowledge).
+# An existing relation with the same (object_a, object_b, type) is updated.
+Relation relation
+---
+bool success
+string message
+uint64 scene_version
+uint64 relation_id

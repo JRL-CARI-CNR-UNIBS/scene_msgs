@@ -1,0 +1,15 @@
+# Acquire the scene and update the database (scene_updater ~/acquire):
+# capture the latest images, detect objects and grasps in parallel, match
+# grasps to objects, associate with the database, write atomically.
+bool detect_grasps                # call the grasp detection service
+float32 timeout                   # seconds for each step; 0 = node default
+---
+bool success
+string message
+uint64 scene_version
+string[] added_ids
+string[] moved_ids
+string[] unchanged_ids
+uint32 num_detections
+uint32 num_grasps                 # grasps detected
+uint32 num_grasps_assigned        # grasps matched to an object

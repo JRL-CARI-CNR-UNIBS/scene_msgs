@@ -1,0 +1,9 @@
+# Remove an object with its grasps and relations, in one transaction.
+# Geometric relations of the neighbors are recomputed; objects that were
+# resting on it are marked to_verify.
+string object_id
+---
+bool success
+string message
+uint64 scene_version
+string[] to_verify_ids

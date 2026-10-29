@@ -1,0 +1,7 @@
+# Change the state of a relation (e.g. after a disassembly step).
+uint64 relation_id
+string new_state                  # tightened | loosened | removed (mechanical)
+---
+bool success
+string message
+uint64 scene_version

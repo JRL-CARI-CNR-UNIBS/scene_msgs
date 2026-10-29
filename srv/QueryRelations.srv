@@ -1,0 +1,15 @@
+# Search relations. All filters must match (AND). Unknown keys are an error.
+#
+# Filter keys:
+#   object_id        object_a or object_b equals this id
+#   other_id         with object_id: the other end equals this id
+#   object_a, object_b   exact ends
+#   type, family, state, source   exact values
+#   min_confidence   minimum confidence
+#   confirmed        "true" | "false"
+KeyValue[] filters
+---
+bool success
+string message
+uint64 scene_version
+Relation[] relations

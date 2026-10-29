@@ -1,0 +1,12 @@
+# Store one view for acquire_grasps (scene_updater ~/capture_view): the first
+# synchronized color + aligned depth + camera_info received after the request,
+# and the camera pose in the fixed frame (tf at the image stamp).
+# The caller (e.g. the robot orchestrator) moves the camera between calls.
+bool clear                  # drop the stored views before capturing
+bool clear_only             # only drop the stored views, capture nothing
+float32 timeout             # seconds; 0 = node default
+---
+bool success
+string message
+uint32 num_views            # views stored after this call
+geometry_msgs/Pose camera_pose   # optical frame of the captured view, fixed frame

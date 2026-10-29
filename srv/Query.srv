@@ -1,0 +1,20 @@
+# Composite query; results are JSON strings because their shape depends on the
+# query type.
+#
+# query_type:
+#   free_objects        objects with no blockers; one JSON object per result
+#                       {"id", "class", "color", "center": [x,y,z], "best_grasp_score"}
+#   blockers_of         params: object_id. What prevents picking the object:
+#                       {"kind": "object_on_top" | "blocking_object" | "fastening",
+#                        "object_id", "relation_id", "type", "state"}
+#   disassembly_order   params: object_id (optional; empty = whole scene).
+#                       Ordered steps: {"step", "action": "release" | "remove",
+#                       "object_id", "relation_id", "type"}
+#   supported_by        params: object_id. Objects resting on it (directly or not)
+string query_type
+KeyValue[] params
+---
+bool success
+string message
+uint64 scene_version
+string[] results_json

@@ -1,0 +1,9 @@
+# Replace the grasps of one object (scene_db ~/set_grasps). Pose, size and
+# observation statistics of the object are not changed.
+string object_id
+builtin_interfaces/Time stamp        # stamp of the images the grasps come from
+grasp_detection_msgs/Grasp[] grasps  # in the fixed frame of the database
+---
+bool success
+string message
+uint64 scene_version

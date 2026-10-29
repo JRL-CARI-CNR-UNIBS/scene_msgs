@@ -1,0 +1,6 @@
+string object_id
+string[] keys                     # missing keys are ignored
+---
+bool success
+string message
+uint64 scene_version

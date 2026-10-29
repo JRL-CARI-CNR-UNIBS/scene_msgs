@@ -1,0 +1,7 @@
+# Add or overwrite user properties of an object, e.g. {located: "blue box"}.
+string object_id
+KeyValue[] properties
+---
+bool success
+string message
+uint64 scene_version

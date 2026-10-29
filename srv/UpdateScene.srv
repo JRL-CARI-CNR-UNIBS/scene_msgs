@@ -1,0 +1,14 @@
+# Atomic write of one acquisition (called by scene_updater). Either every
+# change is applied, or none.
+
+builtin_interfaces/Time stamp     # stamp of the acquired images
+string frame_id                   # must be the fixed frame of the database
+ObjectUpdate[] objects
+Relation[] relations              # inferred / external relations to upsert;
+                                  # ends may reference request objects as "#<n>"
+---
+bool success
+string message
+uint64 scene_version
+string[] object_ids               # database id of each request object
+string[] changed_object_ids       # added or moved

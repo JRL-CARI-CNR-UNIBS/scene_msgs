@@ -1,0 +1,19 @@
+# Detect the grasps of one object on the views stored with capture_view and
+# replace its grasps in the database (scene_updater ~/acquire_grasps).
+#
+# The views are fused by a MultiviewDetectGrasps server in a volume around the
+# object box (from the database), so the grasps are computed only there. Pose
+# and size of the object are not changed.
+string object_id
+float32 margin              # m added around the box for the volume; 0 = node default
+bool keep_views             # keep the stored views (default: cleared after the call)
+float32 timeout             # seconds for each step; 0 = node default
+---
+bool success
+string message
+uint64 scene_version
+uint32 num_views            # views used
+uint32 num_grasps           # grasps detected in the volume
+uint32 num_grasps_assigned  # grasps stored for the object
+geometry_msgs/Point workspace_min   # volume used, fixed frame
+geometry_msgs/Point workspace_max

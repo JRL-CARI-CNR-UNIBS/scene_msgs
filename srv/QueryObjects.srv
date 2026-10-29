@@ -1,0 +1,24 @@
+# Search objects. All filters must match (AND). Unknown keys are an error.
+#
+# Filter keys:
+#   id               exact object id
+#   class            exact class name
+#   color            exact color name
+#   state            ok | to_verify
+#   region           "xmin,xmax,ymin,ymax,zmin,zmax": box center inside
+#   near             "x,y,z": sort by distance from the point (fills distances)
+#   radius           with near: maximum distance (m)
+#   max_age          seconds since last_seen
+#   min_confidence   minimum mean score
+#   min_grasp_score  at least one grasp with this score
+#   free_only        "true": only objects with no blockers (see Query free_objects)
+#   property.<key>   property value ("" = key must exist)
+#   include_grasps   "false" to omit grasps (default true)
+#   max_results      maximum number of results
+KeyValue[] filters
+---
+bool success
+string message
+uint64 scene_version
+SceneObject[] objects        # sorted by distance with "near", else by id
+float32[] distances          # with "near" only
